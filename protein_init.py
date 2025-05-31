@@ -33,16 +33,16 @@ import math
 
 
 def get_T5_model():
-    #model = T5EncoderModel.from_pretrained("Rostlab/prot_t5_xl_uniref50", do_lower_case=False)
+    model = T5EncoderModel.from_pretrained("Rostlab/prot_t5_xl_uniref50", do_lower_case=False)
     # Optionally, download locally.
-    model = T5EncoderModel.from_pretrained("/home/pantong/Code/ProtT5/").to(device)
+    #model = T5EncoderModel.from_pretrained("/home/pantong/Code/ProtT5/").to(device)
     model = model.to(dtype=torch.float16)
 
     model.half()
     model = model.eval()  # set model to evaluation model
-    #tokenizer = T5Tokenizer.from_pretrained("Rostlab/prot_t5_xl_uniref50", do_lower_case=False )
+    tokenizer = T5Tokenizer.from_pretrained("Rostlab/prot_t5_xl_uniref50", do_lower_case=False )
     #Optionally, download locally.
-    tokenizer = T5Tokenizer.from_pretrained("/home/pantong/Code/ProtT5/", do_lower_case=False, force_download=True)
+    #tokenizer = T5Tokenizer.from_pretrained("/home/pantong/Code/ProtT5/", do_lower_case=False, force_download=True)
 
     return model, tokenizer
 
